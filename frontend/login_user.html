@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge - User Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+    <div class="auth-card">
+        <!-- Top Area with Icon -->
+        <div class="auth-top-image" style="background: linear-gradient(180deg, #dbeafe 0%, #f4f7fb 100%);">
+            <div class="auth-icon-badge" style="background: white; border: 2px solid #3b82f6;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 32px; height: 32px;">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="auth-content">
+            <h1 class="auth-title" style="color: #0f172a;">Welcome Back</h1>
+            <p class="auth-subtitle">Login to find affordable food nearby</p>
+
+            <form class="auth-form" id="loginForm">
+                
+                <div class="input-group">
+                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+
+                <div class="input-group">
+                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+
+                <div class="auth-options">
+                    <a href="forgot_password.html" class="forgot-link" style="color: #3b82f6; font-size: 0.9rem; font-weight: 600; text-decoration: none; margin-left: auto;">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="auth-btn" style="background: #10b981; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); margin-top: 16px;" id="btnSubmit">Login</button>
+            </form>
+
+            <p class="auth-footer" style="margin-top: 30px;">
+                Don't have an account? <a href="register_user.html" style="color: #3b82f6; font-weight: 700; text-decoration: none;">Sign Up</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="api.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('btnSubmit');
+            btn.textContent = 'Logging in...';
+            btn.disabled = true;
+
+            const data = {
+                role: 'user',
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+
+            const response = await apiCall('login.php', data);
+            
+            if (response.status === 'success') {
+                SessionManager.login(response.data);
+                window.location.href = 'user_dashboard.html';
+            } else {
+                showToast(response.message, true);
+                btn.textContent = 'Login';
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

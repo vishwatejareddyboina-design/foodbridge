@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8fafc"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:elevation="4dp"
+        android:padding="24dp"
+        android:text="Manage Dine-In"
+        android:textColor="#0f172a"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Dine-In Places"
+                android:textColor="#475569"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+            <EditText
+                android:id="@+id/etTotalPlaces"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_input"
+                android:hint="e.g. 50"
+                android:inputType="number"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Places Currently In Use"
+                android:textColor="#475569"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+            <EditText
+                android:id="@+id/etInUse"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_input"
+                android:hint="e.g. 20"
+                android:inputType="number"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Max Time to Clear Crowd (mins)"
+                android:textColor="#475569"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+            <EditText
+                android:id="@+id/etMaxTime"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_input"
+                android:hint="e.g. 45"
+                android:inputType="number"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="32dp" />
+
+            <Button
+                android:id="@+id/btnSaveDineIn"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Update Dine-In Status"
+                android:backgroundTint="#10b981"
+                app:cornerRadius="12dp"
+                android:layout_marginBottom="16dp" />
+                
+            <Button
+                android:id="@+id/btnDeleteDineIn"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Clear / Stop Dine-In Tracking"
+                android:textColor="#ef4444"
+                android:backgroundTint="#fee2e2"
+                app:cornerRadius="12dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

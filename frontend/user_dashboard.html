@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge - User Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body" style="background: #f8fafc; overflow-y: auto;">
+
+    <!-- Header -->
+    <header style="background: white; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f1f5f9; z-index: 10; position: relative;">
+        <div>
+            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 4px;">Welcome,</p>
+            <div style="display: flex; align-items: center; gap: 4px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span id="userNameHeader" style="font-weight: 700; color: #0f172a; font-size: 1.1rem;">c</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+        </div>
+        <div style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid #3b82f6; display: flex; justify-content: center; align-items: center; background: white;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="flex: 1; padding-bottom: 90px; width: 100%; max-width: 600px; margin: 0 auto; display: flex; flex-direction: column;">
+        
+        <!-- Search Bar -->
+        <div style="padding: 0 24px; margin-top: 20px;">
+            <div style="display: flex; align-items: center; background: white; padding: 14px 16px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 2px 10px rgba(0,0,0,0.02);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; margin-right: 12px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" placeholder="Search for food, hotels..." style="border: none; outline: none; width: 100%; font-size: 0.95rem; font-family: 'Inter', sans-serif; color: #0f172a;">
+            </div>
+        </div>
+
+        <!-- Action Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 24px;">
+            <div id="btnDineIn" onclick="window.location.href='user_dinein.html'" style="background: #e0e7ff; padding: 24px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; cursor: pointer; transition: 0.2s;">
+                <div style="width: 48px; height: 48px; background: transparent; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <h3 style="font-size: 1rem; font-weight: 800; color: #1e3a8a; margin-bottom: 4px;">Dine-in</h3>
+                <p style="font-size: 0.8rem; color: #3b82f6; font-weight: 600;">Live Seats</p>
+            </div>
+            
+            <div id="btnCheapest" onclick="window.location.href='user_cheapest.html'" style="background: #dcfce7; padding: 24px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; cursor: pointer; transition: 0.2s;">
+                <div style="width: 48px; height: 48px; background: transparent; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </div>
+                <h3 style="font-size: 1rem; font-weight: 800; color: #14532d; margin-bottom: 4px;">Cheapest</h3>
+                <p style="font-size: 0.8rem; color: #16a34a; font-weight: 600;">Best Deals</p>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0 24px; margin-bottom: 16px;">
+            <h2 id="sectionTitle" style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 0;">Nearby Surplus</h2>
+            <a href="#" onclick="window.location.reload()" style="color: #10b981; font-weight: 700; font-size: 0.9rem; text-decoration: none;">See All</a>
+        </div>
+        
+        <!-- Container for Food Items -->
+        <div id="foodListContainer">
+            <div style="text-align: center; color: #64748b; padding: 20px;">Loading food items...</div>
+        </div>
+
+    </main>
+
+    <!-- Bottom Navigation (4 Tabs) -->
+    <nav class="bottom-nav">
+        <a href="user_dashboard.html" class="nav-item user-nav-item active">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <span>Home</span>
+        </a>
+        <a href="user_orders.html" class="nav-item user-nav-item">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span>Orders</span>
+        </a>
+        <a href="user_alerts.html" class="nav-item user-nav-item">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            <span>Alerts</span>
+        </a>
+        <a href="user_settings.html" class="nav-item user-nav-item">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <script src="api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (!SessionManager.isLoggedIn()) {
+                window.location.href = 'login_user.html';
+                return;
+            }
+
+            const user = SessionManager.getUser();
+            if(user && user.name) {
+                document.getElementById('userNameHeader').textContent = user.name.split(' ')[0] || "User";
+            }
+
+            const container = document.getElementById('foodListContainer');
+            const sectionTitle = document.getElementById('sectionTitle');
+            let allFoodItems = [];
+            
+            function renderFoodItems(items) {
+                container.innerHTML = '';
+                if (items.length === 0) {
+                    container.innerHTML = '<div style="text-align: center; color: #64748b; padding: 20px;">No surplus food available right now.</div>';
+                    return;
+                }
+                
+                items.forEach(item => {
+                    const originalPrice = parseFloat(item.original_price);
+                    const discountedPrice = parseFloat(item.discounted_price);
+                    
+                    const hygieneBadge = item.hygiene_percentage !== null 
+                        ? `<span style="background:#dcfce7; color:#16a34a; font-size:12px; font-weight:800; padding: 4px 8px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px; width: max-content; margin-bottom: 8px;">✨ ${Math.round(item.hygiene_percentage)}% Hygienic</span>` 
+                        : '';
+                        
+                    const card = document.createElement('div');
+                    card.style.cssText = "background: white; border-radius: 20px; padding: 16px; display: flex; gap: 16px; margin: 0 24px 16px 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); cursor: pointer; transition: 0.2s;";
+                    card.onmouseover = () => { card.style.transform = 'translateY(-2px)'; card.style.boxShadow = '0 8px 25px rgba(0,0,0,0.05)'; };
+                    card.onmouseout = () => { card.style.transform = 'translateY(0)'; card.style.boxShadow = '0 4px 15px rgba(0,0,0,0.03)'; };
+                    
+                    card.onclick = () => {
+                        sessionStorage.setItem('currentFood', JSON.stringify({
+                            food_id: item.id,
+                            hotel_id: item.hotel_id,
+                            item_name: item.item_name,
+                            hotel_name: item.hotel_name || "Unknown Hotel",
+                            price: discountedPrice < originalPrice ? discountedPrice : originalPrice
+                        }));
+                        window.location.href = 'food_detail.html';
+                    };
+                    
+                    const imageHtml = item.image_url 
+                        ? `<img src="http://localhost/foodbridgebackend/${item.image_url}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">`
+                        : `<div style="width: 100%; height: 100%; background: #e2e8f0; display:flex; align-items:center; justify-content:center; border-radius: 8px;"><span style="color:#64748b; font-weight:bold; font-size: 0.8rem;">No Image</span></div>`;
+                    
+                    card.innerHTML = `
+                        <div style="width: 100px; height: 100px; position: relative; border-radius: 8px; overflow: hidden; flex-shrink: 0;">
+                            ${imageHtml}
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 4px;">${item.item_name}</div>
+                            <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 8px;">${item.hotel_name || "Hotel"}</div>
+                            ${hygieneBadge}
+                            <div style="font-weight: 800; color: #0f172a; font-size: 1.1rem; margin-top: auto;">₹${discountedPrice}.0</div>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+            
+            try {
+                const response = await apiCall('search_food.php', { query: "" });
+                if (response.status === 'success') {
+                    allFoodItems = response.data;
+                    renderFoodItems(allFoodItems);
+                } else {
+                    container.innerHTML = '<div style="text-align: center; color: #ef4444; padding: 20px;">Failed to load items.</div>';
+                }
+            } catch(e) {
+                container.innerHTML = '<div style="text-align: center; color: #ef4444; padding: 20px;">Network error.</div>';
+            }
+
+        });
+    </script>
+</body>
+</html>

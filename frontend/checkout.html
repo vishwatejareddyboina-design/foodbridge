@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge - Checkout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge - Checkout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        body { background: #f1f5f9; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+        .web-container { max-width: 1000px; margin: 40px auto; min-height: calc(100vh - 80px); position: relative; }
+        .checkout-header { padding: 24px 0; display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+        
+        .checkout-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px; align-items: start; }
+        
+        .card { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+        .input-box { width: 100%; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px; font-family: 'Inter', sans-serif; font-size: 1rem; box-sizing: border-box; margin-top: 8px; margin-bottom: 24px; }
+        
+        .radio-group { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+        .radio-option { display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 16px; border: 1px solid #e2e8f0; border-radius: 12px; transition: 0.2s; }
+        .radio-option:hover { border-color: #00b468; background: #f0fdf4; }
+        .radio-option input[type="radio"] { accent-color: #00b468; width: 20px; height: 20px; cursor: pointer; }
+        .radio-option label { color: #0f172a; font-size: 1rem; font-weight: 600; cursor: pointer; width: 100%; }
+
+        .btn-checkout { background: #00b468; color: white; border: none; width: 100%; padding: 18px; font-weight: 800; font-size: 1.1rem; border-radius: 8px; cursor: pointer; transition: 0.2s; text-transform: uppercase; margin-top: 24px; box-shadow: 0 4px 15px rgba(0, 180, 104, 0.2); }
+        .btn-checkout:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 180, 104, 0.3); }
+
+        @media (max-width: 768px) {
+            .web-container { margin: 0; padding: 16px; }
+            .checkout-grid { grid-template-columns: 1fr; }
+            .checkout-header { padding: 16px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="web-container">
+    <header class="checkout-header">
+        <a href="food_detail.html" style="color: #0f172a; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: white; border-radius: 50%; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </a>
+        <h1 style="font-size: 1.5rem; font-weight: 800; color: #0f172a; margin: 0;">Checkout</h1>
+    </header>
+
+    <div class="checkout-grid">
+        <!-- Left Column: Delivery & Payment -->
+        <div>
+            <div class="card" style="margin-bottom: 24px;">
+                <h3 style="margin-top: 0; color: #0f172a; font-size: 1.25rem; margin-bottom: 16px;">Delivery Details</h3>
+                <label style="font-weight: 600; font-size: 0.95rem; color: #475569;">Full Delivery Address</label>
+                <input type="text" id="etAddress" class="input-box" placeholder="E.g. House No, Street, City, Landmark" required>
+            </div>
+
+            <div class="card">
+                <h3 style="margin-top: 0; color: #0f172a; font-size: 1.25rem; margin-bottom: 16px;">Payment Method</h3>
+                <div class="radio-group">
+                    <div class="radio-option" onclick="document.getElementById('payOnline').click();">
+                        <input type="radio" id="payOnline" name="payment_method" value="ONLINE" checked>
+                        <label for="payOnline">Pay Online (Razorpay)</label>
+                    </div>
+                    <div class="radio-option" onclick="document.getElementById('payCOD').click();">
+                        <input type="radio" id="payCOD" name="payment_method" value="COD">
+                        <label for="payCOD">Cash on Delivery (COD)</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Order Summary -->
+        <div>
+            <div class="card" style="position: sticky; top: 24px;">
+                <h3 style="margin-top: 0; color: #0f172a; font-size: 1.25rem; margin-bottom: 24px; border-bottom: 1px solid #e2e8f0; padding-bottom: 16px;">Order Summary</h3>
+                
+                <div style="display: flex; justify-content: space-between; margin-bottom: 16px; align-items: center;">
+                    <span id="itemName" style="color: #334155; font-size: 1.1rem; font-weight: 600;">Loading...</span>
+                    <span id="itemPrice" style="color: #0f172a; font-weight: 700; font-size: 1.1rem;">₹0</span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; margin-bottom: 16px; align-items: center; color: #64748b; font-size: 0.95rem;">
+                    <span>Delivery Fee</span>
+                    <span style="color: #10b981; font-weight: 700;">FREE</span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; border-top: 2px dashed #cbd5e1; padding-top: 16px; margin-top: 16px;">
+                    <span style="color: #0f172a; font-weight: 800; font-size: 1.2rem;">Total to Pay</span>
+                    <span id="totalPrice" style="color: #00b468; font-weight: 900; font-size: 1.5rem;">₹0</span>
+                </div>
+
+                <button id="btnPlaceOrder" class="btn-checkout">PLACE ORDER</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="api.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const user = SessionManager.getUser();
+        if (!user) {
+            window.location.href = 'login_user.html';
+            return;
+        }
+
+        const foodDataRaw = sessionStorage.getItem('currentFood');
+        if (!foodDataRaw) {
+            window.location.href = 'user_dashboard.html';
+            return;
+        }
+        const foodData = JSON.parse(foodDataRaw);
+
+        document.getElementById('itemName').textContent = foodData.item_name;
+        document.getElementById('itemPrice').textContent = `₹${foodData.price}.0`;
+        document.getElementById('totalPrice').textContent = `₹${foodData.price}.0`;
+
+        // Load saved address if exists
+        const savedAddress = localStorage.getItem('user_saved_address');
+        if (savedAddress) {
+            document.getElementById('etAddress').value = savedAddress;
+        }
+
+        async function processOrderToBackend(paymentMethodStr, paymentId = "") {
+            const address = document.getElementById('etAddress').value;
+            const btn = document.getElementById('btnPlaceOrder');
+            
+            const data = {
+                user_id: user.id,
+                hotel_id: foodData.hotel_id,
+                total_amount: foodData.price,
+                items: [
+                    {
+                        food_item_id: foodData.food_id,
+                        quantity: 1,
+                        price: foodData.price
+                    }
+                ],
+                payment_method: paymentMethodStr,
+                delivery_address: address
+            };
+
+            const response = await apiCall('place_order.php', data);
+            
+            if (response.status === 'success') {
+                showToast("Order Placed Successfully!");
+                setTimeout(() => {
+                    window.location.href = 'user_orders.html';
+                }, 1500);
+            } else {
+                showToast(response.message || "Failed to place order", true);
+                btn.textContent = 'PLACE ORDER';
+                btn.disabled = false;
+            }
+        }
+
+        document.getElementById('btnPlaceOrder').addEventListener('click', () => {
+            const address = document.getElementById('etAddress').value;
+            if (!address.trim()) {
+                showToast("Please enter a delivery address", true);
+                return;
+            }
+
+            const paymentMethod = document.querySelector('input[name="payment_method"]:checked').value;
+            const btn = document.getElementById('btnPlaceOrder');
+            btn.textContent = 'PROCESSING...';
+            btn.disabled = true;
+
+            if (paymentMethod === "ONLINE") {
+                // Initialize Razorpay
+                const options = {
+                    "key": "rzp_test_SqOZwDnHPrqJm0", // Live Test Key
+                    "amount": parseFloat(foodData.price) * 100, // Amount is in currency subunits (paise)
+                    "currency": "INR",
+                    "name": "FoodBridge",
+                    "description": "Order Payment for " + foodData.item_name,
+                    "handler": function (response) {
+                        // Payment success
+                        processOrderToBackend("ONLINE", response.razorpay_payment_id);
+                    },
+                    "prefill": {
+                        "name": user.name || "User",
+                        "contact": "9999999999" // Dummy
+                    },
+                    "theme": {
+                        "color": "#00b468"
+                    }
+                };
+                
+                const rzp1 = new Razorpay(options);
+                rzp1.on('payment.failed', function (response){
+                    showToast("Payment Failed or Cancelled", true);
+                    btn.textContent = 'PLACE ORDER';
+                    btn.disabled = false;
+                });
+                rzp1.open();
+            } else {
+                // COD
+                processOrderToBackend("COD");
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge - Hotel Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background: #f8fafc; font-family: 'Inter', sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        
+        .dash-header-web { background: #10b981; color: white; padding: 60px 24px; position: relative; display: flex; justify-content: center; }
+        .header-content { max-width: 1000px; width: 100%; display: flex; justify-content: space-between; align-items: flex-start; }
+        
+        .hotel-name { font-size: 2.5rem; font-weight: 800; margin: 0 0 8px 0; color: white; }
+        .hotel-sub { font-size: 1.1rem; opacity: 0.9; margin: 0; }
+        
+        .header-avatar-web { width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .header-avatar-web svg { width: 30px; height: 30px; stroke: white; }
+        
+        .web-container { max-width: 1000px; margin: 0 auto; width: 100%; padding: 40px 24px; box-sizing: border-box; flex: 1; }
+        
+        .section-title { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin: 0 0 24px 0; }
+        
+        .action-grid-web { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 40px; }
+        
+        .action-card { background: white; border-radius: 24px; padding: 32px 24px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; cursor: pointer; transition: 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .action-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.06); border-color: #cbd5e1; }
+        
+        .action-icon { width: 80px; height: 80px; border-radius: 24px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .action-icon svg { width: 36px; height: 36px; }
+        
+        .icon-green { background: #dcfce7; color: #16a34a; stroke: #16a34a; }
+        .icon-orange { background: #ffedd5; color: #000000; stroke: #000000; }
+        .icon-yellow { background: #fef08a20; color: #eab308; stroke: #eab308; }
+        .icon-blue { background: #e0f2fe; color: #3b82f6; stroke: #3b82f6; }
+        
+        .action-card h3 { font-size: 1.1rem; font-weight: 700; color: #0f172a; margin: 0; }
+        
+        @media (max-width: 768px) {
+            .dash-header-web { padding: 40px 24px; }
+            .hotel-name { font-size: 1.8rem; }
+            .action-grid-web { grid-template-columns: repeat(2, 1fr); }
+            .web-container { padding-bottom: 100px; }
+        }
+    </style>
+</head>
+<body class="dashboard-body">
+
+    <!-- Header -->
+    <header class="dash-header-web">
+        <div class="header-content">
+            <div>
+                <h1 class="hotel-name dashboard-user-name">Loading...</h1>
+                <p class="hotel-sub">Welcome back! Manage your operations.</p>
+            </div>
+            <div class="header-avatar-web">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="web-container pb-nav">
+        <h2 class="section-title">Quick Actions</h2>
+        
+        <div class="action-grid-web">
+            
+            <div class="action-card" onclick="window.location.href='hotel_dashboard_food.html'">
+                <div class="action-icon icon-green">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </div>
+                <h3>Add Food</h3>
+            </div>
+
+            <div class="action-card" onclick="window.location.href='hotel_dashboard_donations.html'">
+                <div class="action-icon icon-orange">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                </div>
+                <h3>Donate</h3>
+            </div>
+
+            <div class="action-card" onclick="window.location.href='hotel_orders.html'">
+                <div class="action-icon icon-yellow" style="background: #fffbeb;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                </div>
+                <h3>Orders</h3>
+            </div>
+
+            <div class="action-card" onclick="window.location.href='hotel_manage_dinein.html'">
+                <div class="action-icon icon-blue">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <h3>Dine-In Status</h3>
+            </div>
+
+        </div>
+
+        <h2 class="section-title" style="margin-top: 32px;">Recent Orders</h2>
+        <div id="hotelOrdersContainer">
+            <div style="text-align: center; color: #64748b; padding: 20px;">Loading orders...</div>
+        </div>
+
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="hotel_dashboard_home.html" class="nav-item active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <span>Home</span>
+        </a>
+        <a href="hotel_dashboard_food.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20.5L20.5 11a2.828 2.828 0 1 0-4-4L7 16.5M14 6l4 4M2 22l4-4M2 12l4-4M12 2l4 4"></path></svg>
+            <span>Food</span>
+        </a>
+        <a href="hotel_dashboard_donations.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span>Donations</span>
+        </a>
+        <a href="hotel_dashboard_settings.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            <span>Settings</span>
+        </a>
+    </nav>
+    <script src="api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const hotel = SessionManager.getUser();
+            if (!hotel || hotel.role !== 'hotel') {
+                SessionManager.logout();
+                return;
+            }
+
+            document.querySelector('.dashboard-user-name').textContent = hotel.name;
+
+            const container = document.getElementById('hotelOrdersContainer');
+            
+            async function loadOrders() {
+                try {
+                    const response = await apiCall('get_hotel_orders.php', { hotel_id: hotel.id });
+                    
+                    if (response.status === 'success') {
+                        container.innerHTML = '';
+                        if (response.data.length === 0) {
+                            container.innerHTML = '<div style="text-align: center; color: #64748b; padding: 20px;">No pending orders.</div>';
+                            return;
+                        }
+                        
+                        response.data.forEach(order => {
+                            const card = document.createElement('div');
+                            card.className = 'action-card'; // Reuse style
+                            card.style.flexDirection = 'column';
+                            card.style.alignItems = 'stretch';
+                            card.style.padding = '16px';
+                            card.style.marginBottom = '12px';
+                            card.style.textAlign = 'left';
+                            
+                            let buttonsHtml = '';
+                            if (order.status === 'Pending') {
+                                buttonsHtml = `<button onclick="updateOrderStatus(${order.id}, 'Accepted')" class="auth-btn" style="background: #10b981; margin-top: 12px; padding: 8px;">Accept Order</button>`;
+                            } else if (order.status === 'Accepted') {
+                                buttonsHtml = `<button onclick="updateOrderStatus(${order.id}, 'Assigned to Delivery')" class="auth-btn" style="background: #3b82f6; margin-top: 12px; padding: 8px;">Assign to Delivery</button>`;
+                            }
+
+                            card.innerHTML = `
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                    <span style="font-weight: bold; color: #0f172a;">Order #${order.id} - ${order.status}</span>
+                                    <span style="font-weight: bold; color: #10b981;">₹${order.total_amount}</span>
+                                </div>
+                                <div style="color: #475569; font-size: 0.9rem; margin-bottom: 4px;">User: ${order.user_name}</div>
+                                <div style="color: #64748b; font-size: 0.85rem; margin-bottom: 4px;">Payment: ${order.payment_method} (${order.payment_status})</div>
+                                <div style="color: #b45309; font-size: 0.85rem; font-weight: bold; background: #fef3c7; padding: 4px 8px; border-radius: 4px; display: inline-block;">
+                                    Deliver to: ${order.delivery_address || 'Not specified'}
+                                </div>
+                                ${buttonsHtml}
+                            `;
+                            container.appendChild(card);
+                        });
+                    }
+                } catch(e) {
+                    container.innerHTML = '<div style="text-align: center; color: #ef4444; padding: 20px;">Network error.</div>';
+                }
+            }
+
+            window.updateOrderStatus = async (orderId, newStatus) => {
+                const response = await apiCall('update_order_status.php', { order_id: orderId, status: newStatus });
+                if (response.status === 'success') {
+                    showToast('Order status updated!');
+                    loadOrders();
+                } else {
+                    showToast('Failed to update status', true);
+                }
+            };
+
+            loadOrders();
+        });
+    </script>
+</body>
+</html>
