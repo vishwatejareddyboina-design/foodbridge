@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8fafc"
+    android:orientation="vertical">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:elevation="4dp"
+        android:padding="24dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_arrow_right"
+            android:rotation="180"
+            android:layout_marginEnd="16dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:textColor="#0f172a"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Name Input -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Full Name"
+            android:textColor="#64748b"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_input_field"
+            android:hint="Enter your name"
+            android:text="Grand Palace Hotel"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="#334155"
+            android:textColorHint="#94a3b8"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Email Input -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email Address"
+            android:textColor="#64748b"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_input_field"
+            android:hint="Enter your email"
+            android:inputType="textEmailAddress"
+            android:text="contact@grandpalace.com"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="#334155"
+            android:textColorHint="#94a3b8"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_btn_green_large"
+            android:text="Save Changes"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+</LinearLayout>

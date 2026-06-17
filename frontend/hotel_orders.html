@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge - Hotel Orders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background: #f8fafc; font-family: 'Inter', sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        
+        .dash-header-web { background: white; border-bottom: 1px solid #e2e8f0; padding: 30px 24px; display: flex; justify-content: center; }
+        .header-content { max-width: 1000px; width: 100%; display: flex; align-items: center; gap: 16px; }
+        
+        .back-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #f1f5f9; color: #0f172a; cursor: pointer; transition: 0.2s; text-decoration: none; }
+        .back-btn:hover { background: #e2e8f0; }
+        
+        .page-title { font-size: 2rem; font-weight: 800; color: #0f172a; margin: 0; }
+        
+        .web-container { max-width: 1000px; margin: 40px auto; width: 100%; padding: 0 24px; box-sizing: border-box; flex: 1; }
+        
+        .order-card { background: white; border-radius: 16px; padding: 24px; margin-bottom: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 16px; }
+        .order-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f1f5f9; padding-bottom: 16px; }
+        .order-id { font-size: 1.1rem; font-weight: 800; color: #0f172a; }
+        .order-status { padding: 6px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: 700; }
+        .status-pending { background: #fef08a; color: #854d0e; }
+        .status-accepted { background: #dbeafe; color: #1e40af; }
+        .status-ready { background: #dcfce7; color: #16a34a; }
+        .status-delivered { background: #f1f5f9; color: #475569; }
+        
+        .order-body { display: flex; justify-content: space-between; align-items: center; }
+        .customer-info { display: flex; flex-direction: column; gap: 4px; }
+        .customer-name { font-weight: 700; color: #0f172a; font-size: 1.1rem; }
+        .customer-phone { color: #64748b; font-size: 0.95rem; }
+        .order-amount { font-size: 1.5rem; font-weight: 800; color: #ea580c; }
+        
+        .order-actions { display: flex; gap: 12px; border-top: 1px solid #f1f5f9; padding-top: 16px; }
+        .btn-action { padding: 10px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; border: none; flex: 1; transition: 0.2s; }
+        .btn-accept { background: #10b981; color: white; }
+        .btn-accept:hover { background: #059669; }
+        .btn-ready { background: #3b82f6; color: white; }
+        .btn-ready:hover { background: #2563eb; }
+        
+        #loadingMsg { text-align: center; color: #64748b; font-weight: 600; padding: 40px; font-size: 1.1rem; }
+        
+        @media (max-width: 768px) {
+            .order-body { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .web-container { padding-bottom: 100px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="dash-header-web">
+        <div class="header-content">
+            <a href="hotel_dashboard_home.html" class="back-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            </a>
+            <h1 class="page-title">Hotel Orders</h1>
+        </div>
+    </header>
+
+    <main class="web-container pb-nav">
+        <div id="loadingMsg">Loading orders...</div>
+        <div id="ordersList"></div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="hotel_dashboard_home.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <span>Home</span>
+        </a>
+        <a href="hotel_dashboard_food.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20.5L20.5 11a2.828 2.828 0 1 0-4-4L7 16.5M14 6l4 4M2 22l4-4M2 12l4-4M12 2l4 4"></path></svg>
+            <span>Food</span>
+        </a>
+        <a href="hotel_dashboard_donations.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span>Donations</span>
+        </a>
+        <a href="hotel_dashboard_settings.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            <span>Settings</span>
+        </a>
+    </nav>
+
+    <script src="api.js"></script>
+    <script>
+        let hotelUser = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            hotelUser = SessionManager.getUser();
+            if (!hotelUser || hotelUser.role !== 'hotel') {
+                window.location.href = 'login_hotel.html';
+                return;
+            }
+            loadOrders();
+        });
+
+        async function loadOrders() {
+            const list = document.getElementById('ordersList');
+            const loading = document.getElementById('loadingMsg');
+            
+            try {
+                const response = await apiCall('hotel_orders.php', { hotel_id: hotelUser.id });
+                if (response.status === 'success') {
+                    list.innerHTML = '';
+                    if (response.data.length === 0) {
+                        loading.style.display = 'block';
+                        loading.textContent = "No orders found.";
+                        return;
+                    }
+                    loading.style.display = 'none';
+
+                    response.data.forEach(order => {
+                        let statusClass = 'status-pending';
+                        if (order.status === 'Accepted') statusClass = 'status-accepted';
+                        if (order.status === 'Ready') statusClass = 'status-ready';
+                        if (order.status === 'Delivered') statusClass = 'status-delivered';
+                        
+                        let actionsHtml = '';
+                        if (order.status === 'Pending') {
+                            actionsHtml = `<div class="order-actions"><button class="btn-action btn-accept" onclick="updateOrderStatus(${order.id}, 'Accepted')">Accept Order</button></div>`;
+                        } else if (order.status === 'Accepted') {
+                            actionsHtml = `<div class="order-actions"><button class="btn-action btn-ready" onclick="updateOrderStatus(${order.id}, 'Ready')">Mark as Ready</button></div>`;
+                        }
+                        
+                        const card = document.createElement('div');
+                        card.className = 'order-card';
+                        card.innerHTML = `
+                            <div class="order-header">
+                                <span class="order-id">Order #${order.id}</span>
+                                <span class="order-status ${statusClass}">${order.status}</span>
+                            </div>
+                            <div class="order-body">
+                                <div class="customer-info">
+                                    <span class="customer-name">${order.user_name}</span>
+                                    <span class="customer-phone">${order.user_phone}</span>
+                                    <span class="customer-phone" style="font-size: 0.85rem; margin-top:4px;">Placed: ${new Date(order.created_at).toLocaleString()}</span>
+                                </div>
+                                <div class="order-amount">₹${parseFloat(order.total_amount).toFixed(2)}</div>
+                            </div>
+                            ${actionsHtml}
+                        `;
+                        list.appendChild(card);
+                    });
+                } else {
+                    loading.textContent = 'Failed to load orders.';
+                }
+            } catch (e) {
+                loading.textContent = 'Network Error.';
+            }
+        }
+
+        async function updateOrderStatus(orderId, newStatus) {
+            try {
+                const response = await apiCall('update_order_status.php', { order_id: orderId, status: newStatus });
+                if (response.status === 'success') {
+                    loadOrders(); // Refresh the list
+                } else {
+                    alert(response.message || "Failed to update order.");
+                }
+            } catch(e) {
+                alert("Network error.");
+            }
+        }
+    </script>
+</body>
+</html>

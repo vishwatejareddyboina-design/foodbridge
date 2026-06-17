@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8fafc"
+    android:orientation="vertical">
+
+    <!-- Header -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_icon_box"
+            android:backgroundTint="#FFFFFF"
+            android:padding="12dp"
+            android:src="@drawable/ic_arrow_right"
+            android:rotation="180" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Become a Rider"
+            android:textColor="#0f172a"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Full Name -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+                <EditText
+                    android:id="@+id/etFullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="Full Name"
+                    android:paddingStart="48dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="#334155"
+                    android:textColorHint="#94a3b8" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_user_outline"
+                    android:tint="#94a3b8" />
+            </FrameLayout>
+
+            <!-- Email -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="Email Address"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="48dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="#334155"
+                    android:textColorHint="#94a3b8" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_mail"
+                    android:tint="#94a3b8" />
+            </FrameLayout>
+
+            <!-- Phone Number -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp">
+                <EditText
+                    android:id="@+id/etPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="Phone Number"
+                    android:inputType="phone"
+                    android:paddingStart="48dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="#334155"
+                    android:textColorHint="#94a3b8" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_phone"
+                    android:tint="#94a3b8" />
+            </FrameLayout>
+
+            <!-- Vehicle Type -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vehicle Type"
+                android:textColor="#1e293b"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp"
+                android:weightSum="3">
+
+                <!-- Bike -->
+                <TextView
+                    android:id="@+id/btnBike"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_input_field"
+                    android:gravity="center"
+                    android:text="Bike"
+                    android:textColor="#ea580c"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp" />
+
+                <!-- Scooter -->
+                <TextView
+                    android:id="@+id/btnScooter"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_input_field"
+                    android:gravity="center"
+                    android:text="Scooter"
+                    android:textColor="#64748b"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp" />
+
+                <!-- Bicycle -->
+                <TextView
+                    android:id="@+id/btnBicycle"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_input_field"
+                    android:gravity="center"
+                    android:text="Bicycle"
+                    android:textColor="#64748b"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Driving License -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp">
+                <EditText
+                    android:id="@+id/etLicense"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="Driving License Number"
+                    android:paddingStart="48dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="#334155"
+                    android:textColorHint="#94a3b8" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_location"
+                    android:tint="#94a3b8" />
+            </FrameLayout>
+
+            <!-- Password -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp">
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:paddingStart="48dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="#334155"
+                    android:textColorHint="#94a3b8" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_lock"
+                    android:tint="#94a3b8" />
+            </FrameLayout>
+
+            <!-- Submit Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_btn_orange_large"
+                android:text="Submit Application"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+                
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

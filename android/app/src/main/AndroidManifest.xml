@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.foodbridge.app">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:usesCleartextTraffic="true"
+        android:icon="@drawable/ic_leaf"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_leaf"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".ChooseRoleActivity"
+            android:exported="true">
+        </activity>
+        
+        <activity
+            android:name=".DineInListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DineInDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheapestSearchActivity"
+            android:exported="false" />
+        <activity android:name=".HotelLoginActivity" />
+        <activity android:name=".RegisterHotelActivity" />
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".ChangePasswordActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".HotelDashboardActivity" />
+        <activity android:name=".HelpSupportActivity" />
+        <activity android:name=".PrivacyPolicyActivity" />
+        <activity android:name=".ReviewsActivity" />
+        <activity android:name=".DeliveryLoginActivity" />
+        <activity android:name=".RegisterDeliveryActivity" />
+        <activity android:name=".DeliveryDashboardActivity" />
+        <activity android:name=".UserLoginActivity" />
+        <activity android:name=".RegisterUserActivity" />
+        <activity android:name=".UserDashboardActivity" />
+        <activity android:name=".AddFoodActivity" />
+        <activity android:name=".CheckoutActivity" />
+        <activity android:name=".OrderTrackingActivity" />
+        <activity android:name=".SubmitReviewActivity" />
+        <activity android:name=".HotelOrdersActivity" />
+        <activity android:name=".DonateFoodActivity" />
+        <activity android:name=".ManageDineInActivity" />
+        <activity android:name=".SavedAddressActivity" android:exported="false" />
+        <activity android:name=".FoodDetailActivity" android:exported="false" />
+    </application>
+
+</manifest>

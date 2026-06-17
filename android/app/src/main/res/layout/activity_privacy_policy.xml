@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8fafc"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="#0f172a"
+            android:background="?attr/selectableItemBackgroundBorderless" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Privacy Policy"
+            android:textColor="#0f172a"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Data Collection"
+                android:textColor="#0f172a"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We collect personal data such as your name, email, and location to provide you with seamless food delivery and dining experiences."
+                android:textColor="#475569"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Location Services"
+                android:textColor="#0f172a"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your location data is securely used to show you nearby restaurants and track delivery partners accurately."
+                android:textColor="#475569"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp" />
+                
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Payment Security"
+                android:textColor="#0f172a"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="All payment details are heavily encrypted and processed by trusted third-party providers. We do not store your credit card information."
+                android:textColor="#475569"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp" />
+                
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. Data Sharing"
+                android:textColor="#0f172a"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We share your order details and delivery address strictly with the associated hotel and delivery partner fulfilling your order."
+                android:textColor="#475569"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp" />
+                
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5. Account Deletion"
+                android:textColor="#0f172a"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You have the right to request deletion of your account and personal data from our servers at any time via the settings page."
+                android:textColor="#475569"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp" />
+                
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="6. Policy Updates"
+                android:textColor="#0f172a"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We may update this policy occasionally. Continued use of Food Bridge implies acceptance of the latest privacy terms."
+                android:textColor="#475569"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="32dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

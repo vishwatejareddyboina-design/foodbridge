@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge - Item Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background: #f1f5f9; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+        .web-container { max-width: 1000px; margin: 40px auto; min-height: calc(100vh - 80px); position: relative; }
+        .detail-header { padding: 24px 0; display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+        
+        .detail-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px; align-items: start; }
+        
+        .card { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); margin-bottom: 24px; }
+        .review-card { background: #f8fafc; border-radius: 12px; padding: 20px; margin-bottom: 12px; border: 1px solid #e2e8f0; }
+        
+        .food-img-container { width: 100%; height: 300px; background: #e2e8f0; border-radius: 16px; margin-bottom: 24px; overflow: hidden; display: flex; justify-content: center; align-items: center; }
+        .food-img-container img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .btn-checkout { background: #00b468; color: white; border: none; width: 100%; padding: 18px; font-weight: 800; font-size: 1.1rem; border-radius: 8px; cursor: pointer; transition: 0.2s; text-transform: uppercase; margin-top: 24px; box-shadow: 0 4px 15px rgba(0, 180, 104, 0.2); }
+        .btn-checkout:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 180, 104, 0.3); }
+
+        @media (max-width: 768px) {
+            .web-container { margin: 0; padding: 16px; }
+            .detail-grid { grid-template-columns: 1fr; }
+            .detail-header { padding: 16px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="web-container">
+    <header class="detail-header">
+        <a href="user_dashboard.html" style="color: #0f172a; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: white; border-radius: 50%; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </a>
+        <h1 style="font-size: 1.5rem; font-weight: 800; color: #0f172a; margin: 0;">Item Details</h1>
+    </header>
+
+    <div class="detail-grid">
+        <!-- Left Column: Image and Reviews -->
+        <div>
+            <div class="card" style="padding: 0; overflow: hidden;">
+                <div class="food-img-container" id="foodImgContainer" style="margin-bottom: 0; border-radius: 0;">
+                    <!-- Image will be injected here -->
+                    <span style="color:#64748b; font-weight:bold; font-size: 1rem;">Loading Image...</span>
+                </div>
+                <div style="padding: 24px;">
+                    <h2 id="foodName" style="font-size: 1.75rem; font-weight: 800; color: #0f172a; margin-top: 0; margin-bottom: 8px;">Loading...</h2>
+                    <p id="hotelName" style="color: #64748b; font-size: 1rem; margin-top: 0; margin-bottom: 0;">Prepared by: Loading...</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                    <h3 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 0;">Hotel Reviews</h3>
+                    <div id="avgRatingBadge" style="display: none; background: #fffbeb; color: #d97706; font-weight: 800; padding: 6px 16px; border-radius: 12px; font-size: 0.95rem;">
+                        ★ <span id="avgRatingText">4.5</span>
+                    </div>
+                </div>
+
+                <div id="reviewsContainer">
+                    <div style="text-align: center; color: #64748b; padding: 20px;">Loading reviews...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Price and Checkout -->
+        <div>
+            <div class="card" style="position: sticky; top: 24px;">
+                <h3 style="margin-top: 0; color: #0f172a; font-size: 1.25rem; margin-bottom: 16px; border-bottom: 1px solid #e2e8f0; padding-bottom: 16px;">Order Details</h3>
+                
+                <div style="margin-bottom: 24px;">
+                    <span style="color: #64748b; font-size: 0.95rem; font-weight: 600;">Total Price</span>
+                    <div id="foodPrice" style="font-size: 2.5rem; font-weight: 900; color: #00b468; margin-top: 8px;">₹0</div>
+                </div>
+
+                <div style="background: #f0fdf4; padding: 16px; border-radius: 12px; display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+                    <div>
+                        <div style="color: #16a34a; font-weight: 800; font-size: 0.95rem;">Great Choice!</div>
+                        <div style="color: #14532d; font-size: 0.85rem; font-weight: 600;">You're reducing food waste today.</div>
+                    </div>
+                </div>
+
+                <button id="btnCheckout" class="btn-checkout">PROCEED TO CHECKOUT</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="api.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        const foodDataRaw = sessionStorage.getItem('currentFood');
+        if (!foodDataRaw) {
+            window.location.href = 'user_dashboard.html';
+            return;
+        }
+        const foodData = JSON.parse(foodDataRaw);
+
+        document.getElementById('foodName').textContent = foodData.item_name;
+        document.getElementById('hotelName').textContent = `Prepared by: ${foodData.hotel_name}`;
+        document.getElementById('foodPrice').textContent = `₹${foodData.price}.0`;
+
+        // If you passed the image URL in sessionStorage you could show it here.
+        // Assuming we need to fetch the image or it's not in sessionStorage:
+        // Actually, let's fetch food details just to be safe, or if it's not saved.
+        // Wait, the API 'search_food.php' returns everything. Let's just do a search for the ID to get the image.
+        try {
+            const resp = await apiCall('search_food.php', { query: foodData.item_name });
+            if (resp.status === 'success' && resp.data.length > 0) {
+                const item = resp.data.find(f => f.id === foodData.food_id);
+                if (item && item.image_url) {
+                    document.getElementById('foodImgContainer').innerHTML = `<img src="http://localhost/foodbridgebackend/${item.image_url}">`;
+                } else {
+                    document.getElementById('foodImgContainer').innerHTML = `<span style="color:#64748b; font-weight:bold; font-size: 1rem;">No Image Available</span>`;
+                }
+            } else {
+                document.getElementById('foodImgContainer').innerHTML = `<span style="color:#64748b; font-weight:bold; font-size: 1rem;">No Image Available</span>`;
+            }
+        } catch (e) {
+            document.getElementById('foodImgContainer').innerHTML = `<span style="color:#64748b; font-weight:bold; font-size: 1rem;">No Image Available</span>`;
+        }
+
+
+        document.getElementById('btnCheckout').onclick = () => {
+            window.location.href = 'checkout.html';
+        };
+
+        // Fetch Reviews
+        const container = document.getElementById('reviewsContainer');
+        try {
+            const response = await apiCall('get_hotel_reviews.php', { hotel_id: foodData.hotel_id });
+            if (response.status === 'success') {
+                if (response.data.reviews.length === 0) {
+                    container.innerHTML = '<div style="text-align: center; color: #94a3b8; font-style: italic; padding: 20px;">No reviews yet for this hotel.</div>';
+                } else {
+                    document.getElementById('avgRatingBadge').style.display = 'block';
+                    document.getElementById('avgRatingText').textContent = parseFloat(response.data.average_rating).toFixed(1);
+
+                    container.innerHTML = '';
+                    response.data.reviews.forEach(review => {
+                        const hygieneStr = review.is_hygienic !== null 
+                            ? (review.is_hygienic === 1 
+                                ? '<div style="color: #00b468; font-size: 0.8rem; font-weight: 800; margin-top: 12px; display: flex; align-items: center; gap: 4px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width:14px; height:14px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Hygienic Preparation</div>'
+                                : '<div style="color: #ef4444; font-size: 0.8rem; font-weight: 800; margin-top: 12px; display: flex; align-items: center; gap: 4px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width:14px; height:14px;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Not Hygienic</div>')
+                            : '';
+                        
+                        const div = document.createElement('div');
+                        div.className = 'review-card';
+                        div.innerHTML = `
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px; align-items: center;">
+                                <span style="font-weight: 800; color: #0f172a; font-size: 1rem;">${review.user_name}</span>
+                                <span style="background: white; color: #d97706; padding: 4px 10px; border-radius: 12px; font-weight: 800; font-size: 0.85rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">★ ${parseFloat(review.rating).toFixed(1)}</span>
+                            </div>
+                            <div style="color: #475569; font-size: 0.95rem; line-height: 1.5;">${review.comment || ''}</div>
+                            ${hygieneStr}
+                        `;
+                        container.appendChild(div);
+                    });
+                }
+            } else {
+                container.innerHTML = '<div style="text-align: center; color: #ef4444; padding: 20px;">Failed to load reviews.</div>';
+            }
+        } catch(e) {
+            container.innerHTML = '<div style="text-align: center; color: #ef4444; padding: 20px;">Network error.</div>';
+        }
+    });
+</script>
+</body>
+</html>
