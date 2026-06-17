@@ -1,0 +1,41 @@
+name: Node.js Selenium E2E Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Install Test Dependencies
+      working-directory: ./selenium_nodejs_tests
+      run: npm install
+
+    - name: Start Frontend Local Server
+      # We need a local server running on port 8000 for the tests to hit
+      run: |
+        npx serve -l 8000 &
+        sleep 3
+
+    - name: Run Selenium E2E Tests
+      working-directory: ./selenium_nodejs_tests
+      run: node run_tests.js
+
+    - name: Upload Excel Test Report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: Selenium-E2E-Report
+        path: ./selenium_nodejs_tests/*.xlsx
