@@ -75,31 +75,23 @@ async function runTests() {
     }
     
     await driver.quit();
-    console.log('\nGenerating Excel Report...');
-    await generateExcel();
+    console.log('\nGenerating JSON Report...');
+    await generateJSON();
 }
 
-async function generateExcel() {
-    const workbook = new ExcelJS.Workbook();
-    const sheet = workbook.addWorksheet('Test Report');
-    
-    sheet.columns = [
-        { header: 'Test ID', key: 'id', width: 10 },
-        { header: 'Module', key: 'module', width: 20 },
-        { header: 'Test Case Name', key: 'name', width: 50 },
-        { header: 'Status', key: 'status', width: 15 },
-        { header: 'Execution Time', key: 'time', width: 15 },
-        { header: 'Error', key: 'error', width: 60 }
-    ];
-    
-    testResults.forEach(res => sheet.addRow(res));
-    
-    // Style headers
-    sheet.getRow(1).font = { bold: true };
-    
+async function generateJSON() {
+    const fs = require('fs');
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const filename = `Selenium_Web_E2E_Test_Report_${timestamp}.xlsx`;
-    await workbook.xlsx.writeFile(filename);
+    const filename = `Selenium_Web_E2E_Test_Report_${timestamp}.json`;
+    
+    const reportData = {
+        totalTests: testResults.length,
+        passed: testResults.filter(t => t.status === 'Pass').length,
+        failed: testResults.filter(t => t.status === 'Fail').length,
+        results: testResults
+    };
+    
+    fs.writeFileSync(filename, JSON.stringify(reportData, null, 4));
     console.log(`Test completely finished! Report saved as: ${filename}`);
 }
 

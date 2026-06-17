@@ -1,0 +1,639 @@
+{
+    "totalTests": 79,
+    "passed": 79,
+    "failed": 0,
+    "results": [
+        {
+            "id": "TC-001",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: invalidemail, Pwd: EMPTY",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-002",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: invalidemail, Pwd: 123",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-003",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: invalidemail, Pwd: password",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-004",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: invalidemail, Pwd: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-005",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: invalidemail, Pwd: pass123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-006",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: admin' OR 1=1--, Pwd: EMPTY",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-007",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: admin' OR 1=1--, Pwd: 123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-008",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: admin' OR 1=1--, Pwd: password",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-009",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: admin' OR 1=1--, Pwd: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-010",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: admin' OR 1=1--, Pwd: pass123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-011",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: <script>alert(1)</script>@gmail.com, Pwd: EMPTY",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-012",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: <script>alert(1)</script>@gmail.com, Pwd: 123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-013",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: <script>alert(1)</script>@gmail.com, Pwd: password",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-014",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: <script>alert(1)</script>@gmail.com, Pwd: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-015",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: <script>alert(1)</script>@gmail.com, Pwd: pass123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-016",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: EMPTY, Pwd: EMPTY",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-017",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: EMPTY, Pwd: 123",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-018",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: EMPTY, Pwd: password",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-019",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: EMPTY, Pwd: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-020",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: EMPTY, Pwd: pass123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-021",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@gmail.com, Pwd: EMPTY",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-022",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@gmail.com, Pwd: 123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-023",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@gmail.com, Pwd: password",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-024",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@gmail.com, Pwd: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-025",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: user, Email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@gmail.com, Pwd: pass123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-026",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: invalidemail, Pwd: EMPTY",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-027",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: invalidemail, Pwd: 123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-028",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: invalidemail, Pwd: password",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-029",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: invalidemail, Pwd: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-030",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: invalidemail, Pwd: pass123",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-031",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: admin' OR 1=1--, Pwd: EMPTY",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-032",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: admin' OR 1=1--, Pwd: 123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-033",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: admin' OR 1=1--, Pwd: password",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-034",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: admin' OR 1=1--, Pwd: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-035",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: admin' OR 1=1--, Pwd: pass123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-036",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: <script>alert(1)</script>@gmail.com, Pwd: EMPTY",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-037",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: <script>alert(1)</script>@gmail.com, Pwd: 123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-038",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: <script>alert(1)</script>@gmail.com, Pwd: password",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-039",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: <script>alert(1)</script>@gmail.com, Pwd: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-040",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: <script>alert(1)</script>@gmail.com, Pwd: pass123",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-041",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: EMPTY, Pwd: EMPTY",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-042",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: EMPTY, Pwd: 123",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-043",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: EMPTY, Pwd: password",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-044",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: EMPTY, Pwd: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-045",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: EMPTY, Pwd: pass123",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-046",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@gmail.com, Pwd: EMPTY",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-047",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@gmail.com, Pwd: 123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-048",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@gmail.com, Pwd: password",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-049",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@gmail.com, Pwd: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-050",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: hotel, Email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@gmail.com, Pwd: pass123",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-051",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: invalidemail, Pwd: EMPTY",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-052",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: invalidemail, Pwd: 123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-053",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: invalidemail, Pwd: password",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-054",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: invalidemail, Pwd: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-055",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: invalidemail, Pwd: pass123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-056",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: admin' OR 1=1--, Pwd: EMPTY",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-057",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: admin' OR 1=1--, Pwd: 123",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-058",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: admin' OR 1=1--, Pwd: password",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-059",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: admin' OR 1=1--, Pwd: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-060",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: admin' OR 1=1--, Pwd: pass123",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-061",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: <script>alert(1)</script>@gmail.com, Pwd: EMPTY",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-062",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: <script>alert(1)</script>@gmail.com, Pwd: 123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-063",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: <script>alert(1)</script>@gmail.com, Pwd: password",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-064",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: <script>alert(1)</script>@gmail.com, Pwd: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-065",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: <script>alert(1)</script>@gmail.com, Pwd: pass123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-066",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: EMPTY, Pwd: EMPTY",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-067",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: EMPTY, Pwd: 123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-068",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: EMPTY, Pwd: password",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-069",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: EMPTY, Pwd: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-070",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: EMPTY, Pwd: pass123",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-071",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@gmail.com, Pwd: EMPTY",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-072",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@gmail.com, Pwd: 123",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-073",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@gmail.com, Pwd: password",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-074",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@gmail.com, Pwd: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-075",
+            "module": "E2E Suite",
+            "name": "Login Validation - Role: delivery, Email: verylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemailverylongemail@gmail.com, Pwd: pass123",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-076",
+            "module": "E2E Suite",
+            "name": "Navigation - Check Load of index.html",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-077",
+            "module": "E2E Suite",
+            "name": "Navigation - Check Load of choose_role.html",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        },
+        {
+            "id": "TC-078",
+            "module": "E2E Suite",
+            "name": "Navigation - Check Load of privacy_policy.html",
+            "status": "Pass",
+            "time": "0.02s",
+            "error": ""
+        },
+        {
+            "id": "TC-079",
+            "module": "E2E Suite",
+            "name": "Navigation - Check Load of help_support.html",
+            "status": "Pass",
+            "time": "0.01s",
+            "error": ""
+        }
+    ]
+}
