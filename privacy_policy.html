@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge - Privacy Policy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background: #f8fafc; font-family: 'Inter', sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        
+        .dash-header-web { background: white; border-bottom: 1px solid #e2e8f0; padding: 30px 24px; display: flex; justify-content: center; }
+        .header-content { max-width: 1000px; width: 100%; display: flex; align-items: center; gap: 16px; }
+        
+        .back-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #f1f5f9; color: #0f172a; cursor: pointer; transition: 0.2s; text-decoration: none; }
+        .back-btn:hover { background: #e2e8f0; }
+        
+        .page-title { font-size: 2rem; font-weight: 800; color: #0f172a; margin: 0; }
+        
+        .web-container { max-width: 1000px; margin: 40px auto; width: 100%; padding: 0 24px; box-sizing: border-box; flex: 1; }
+        
+        .content-card { background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #e2e8f0; }
+        
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        
+        .info-item { background: #f8fafc; padding: 24px; border-radius: 12px; border: 1px solid #f1f5f9; }
+        .info-item-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .info-number { width: 32px; height: 32px; background: #10b981; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0; }
+        
+        .info-title { font-size: 1.1rem; font-weight: 700; color: #0f172a; margin: 0; }
+        .info-desc { color: #475569; font-size: 0.95rem; margin: 0; line-height: 1.6; }
+        
+        @media (max-width: 768px) {
+            .info-grid { grid-template-columns: 1fr; }
+            .content-card { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="dash-header-web">
+        <div class="header-content">
+            <a href="javascript:history.back()" class="back-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            </a>
+            <h1 class="page-title">Privacy Policy</h1>
+        </div>
+    </header>
+
+    <main class="web-container">
+        <div class="content-card">
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-item-header">
+                        <div class="info-number">1</div>
+                        <h2 class="info-title">Data Collection</h2>
+                    </div>
+                    <p class="info-desc">We collect personal data such as your name, email, and location to provide you with seamless food delivery and dining experiences.</p>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-item-header">
+                        <div class="info-number">2</div>
+                        <h2 class="info-title">Location Services</h2>
+                    </div>
+                    <p class="info-desc">Your location data is securely used to show you nearby restaurants and track delivery partners accurately.</p>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-item-header">
+                        <div class="info-number">3</div>
+                        <h2 class="info-title">Payment Security</h2>
+                    </div>
+                    <p class="info-desc">All payment details are heavily encrypted and processed by trusted third-party providers. We do not store your credit card information.</p>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-item-header">
+                        <div class="info-number">4</div>
+                        <h2 class="info-title">Data Sharing</h2>
+                    </div>
+                    <p class="info-desc">We share your order details and delivery address strictly with the associated hotel and delivery partner fulfilling your order.</p>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-item-header">
+                        <div class="info-number">5</div>
+                        <h2 class="info-title">Account Deletion</h2>
+                    </div>
+                    <p class="info-desc">You have the right to request deletion of your account and personal data from our servers at any time via the settings page.</p>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-item-header">
+                        <div class="info-number">6</div>
+                        <h2 class="info-title">Policy Updates</h2>
+                    </div>
+                    <p class="info-desc">We may update this policy occasionally. Continued use of Food Bridge implies acceptance of the latest privacy terms.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+/* (Keep existing styles from previous steps) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #24b873 0%, #0d7c58 100%);
+    color: #ffffff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Splash styles */
+.splash-container { ... }
+.logo-box { ... }
+/* ... (Splash classes omitted for brevity, let me do a replace instead to preserve them) ... */

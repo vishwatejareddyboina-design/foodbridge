@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge - Create Account</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+
+    <div class="auth-top-gradient" style="background: #f8fafc; height: auto; padding: 20px 24px;">
+        <div style="display: flex; align-items: center; justify-content: center; position: relative;">
+            <a href="login_user.html" style="position: absolute; left: 0; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: white; border-radius: 50%; border: 1px solid #e2e8f0; color: #0f172a; text-decoration: none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </a>
+            <h1 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin: 0;">Create Account</h1>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="auth-content register-content" style="padding-top: 20px;">
+        <form class="auth-form" id="registerForm">
+            
+            <div class="input-group">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <input type="text" id="fullName" placeholder="Full Name" required>
+            </div>
+
+            <div class="input-group">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <input type="email" id="email" placeholder="Email Address" required>
+            </div>
+
+            <div class="input-group">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+            </div>
+
+            <div class="input-group">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="auth-btn" style="background: #10b981; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); margin-top: 20px;" id="btnSubmit">Sign Up</button>
+        </form>
+    </div>
+
+    <script src="api.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('btnSubmit');
+            btn.textContent = 'Creating Account...';
+            btn.disabled = true;
+
+            const data = {
+                role: 'user',
+                full_name: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                password: document.getElementById('password').value
+            };
+
+            const response = await apiCall('register.php', data);
+            
+            if (response.status === 'success') {
+                showToast('Account created successfully! Please login.');
+                window.location.href = 'login_user.html';
+            } else {
+                showToast(response.message, true);
+                btn.textContent = 'Sign Up';
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
