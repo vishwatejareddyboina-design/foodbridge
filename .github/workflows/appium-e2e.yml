@@ -24,10 +24,50 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install pandas openpyxl
 
     - name: Run Appium Android Tests
       working-directory: ./android/appium_tests
       run: python run_tests.py
+
+    - name: Generate Job Summary
+      if: always()
+      working-directory: ./android/appium_tests
+      run: |
+        python -c "
+        import pandas as pd
+        import glob
+        import os
+        
+        files = glob.glob('Appium_Android_Test_Report_*.xlsx')
+        if not files:
+            print('No report found.')
+            exit(0)
+            
+        df = pd.read_excel(files[0])
+        total = len(df)
+        passed = len(df[df['Status'] == 'Pass'])
+        failed = len(df[df['Status'] == 'Fail'])
+        
+        summary = f'''## 📱 Appium Test Report Summary\n
+        | Total Tests | Passed ✅ | Failed ❌ |
+        |-------------|-----------|-----------|
+        | {total} | {passed} | {failed} |\n
+        ### Recent Failures
+        | Test ID | Test Case | Error |
+        |---------|-----------|-------|
+        '''
+        
+        failures = df[df['Status'] == 'Fail'].head(10)
+        if failures.empty:
+            summary += '| - | No failures detected! 🎉 | - |\n'
+        else:
+            for _, row in failures.iterrows():
+                summary += f\"| {row['Test ID']} | {row['Test Case Name']} | {row['Error']} |\n\"
+                
+        with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as f:
+            f.write(summary)
+        "
 
     - name: Upload Excel Test Report
       if: always()
