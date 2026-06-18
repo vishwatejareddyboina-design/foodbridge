@@ -27,6 +27,45 @@ jobs:
       working-directory: ./selenium_tests
       run: node run_tests.js
 
+    - name: Generate Job Summary
+      if: always()
+      working-directory: ./selenium_tests
+      run: |
+        echo "## 📊 Selenium Test Report Summary" >> $GITHUB_STEP_SUMMARY
+        echo "| Total Tests | Passed ✅ | Failed ❌ |" >> $GITHUB_STEP_SUMMARY
+        echo "|-------------|-----------|-----------|" >> $GITHUB_STEP_SUMMARY
+        node -e "
+        const fs = require('fs');
+        const files = fs.readdirSync('.');
+        const reportFile = files.find(f => f.startsWith('Selenium_Web_E2E_Test_Report_') && f.endsWith('.json'));
+        if (reportFile) {
+            const data = JSON.parse(fs.readFileSync(reportFile, 'utf8'));
+            console.log('| ' + data.totalTests + ' | ' + data.passed + ' | ' + data.failed + ' |');
+        } else {
+            console.log('| N/A | N/A | N/A |');
+        }
+        " >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Recent Failures" >> $GITHUB_STEP_SUMMARY
+        echo "| Test ID | Name | Error |" >> $GITHUB_STEP_SUMMARY
+        echo "|---------|------|-------|" >> $GITHUB_STEP_SUMMARY
+        node -e "
+        const fs = require('fs');
+        const files = fs.readdirSync('.');
+        const reportFile = files.find(f => f.startsWith('Selenium_Web_E2E_Test_Report_') && f.endsWith('.json'));
+        if (reportFile) {
+            const data = JSON.parse(fs.readFileSync(reportFile, 'utf8'));
+            const failures = data.results.filter(r => r.status === 'Fail').slice(0, 10);
+            if (failures.length > 0) {
+                failures.forEach(f => {
+                    console.log('| ' + f.id + ' | ' + f.name + ' | ' + (f.error || '-') + ' |');
+                });
+            } else {
+                console.log('| - | No failures detected! 🎉 | - |');
+            }
+        }
+        " >> $GITHUB_STEP_SUMMARY
+
     - name: Upload Excel Test Report
       if: always()
       uses: actions/upload-artifact@v4
