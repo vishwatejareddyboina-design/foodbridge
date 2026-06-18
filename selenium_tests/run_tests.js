@@ -75,8 +75,50 @@ async function runTests() {
     }
     
     await driver.quit();
+    console.log('\nGenerating Excel Report...');
+    await generateExcel();
     console.log('\nGenerating JSON Report...');
     await generateJSON();
+}
+
+async function generateExcel() {
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const filename = `Selenium_Web_E2E_Test_Report_${timestamp}.xlsx`;
+    
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet('Test Results');
+    
+    worksheet.columns = [
+        { header: 'Test ID', key: 'id', width: 10 },
+        { header: 'Module', key: 'module', width: 20 },
+        { header: 'Test Case Name', key: 'name', width: 60 },
+        { header: 'Status', key: 'status', width: 15 },
+        { header: 'Time (s)', key: 'time', width: 10 },
+        { header: 'Error Details', key: 'error', width: 50 }
+    ];
+    
+    // Add styling to header row
+    worksheet.getRow(1).font = { bold: true };
+    worksheet.getRow(1).fill = {
+        type: 'pattern',
+        pattern: 'solid',
+        fgColor: { argb: 'FFE0E0E0' }
+    };
+    
+    // Add rows and color-code status
+    testResults.forEach(tc => {
+        const row = worksheet.addRow(tc);
+        const statusCell = row.getCell('status');
+        
+        if (tc.status === 'Pass') {
+            statusCell.font = { color: { argb: 'FF008000' }, bold: true }; // Green
+        } else {
+            statusCell.font = { color: { argb: 'FFFF0000' }, bold: true }; // Red
+        }
+    });
+    
+    await workbook.xlsx.writeFile(filename);
+    console.log(`Excel report saved as: ${filename}`);
 }
 
 async function generateJSON() {
@@ -92,7 +134,7 @@ async function generateJSON() {
     };
     
     fs.writeFileSync(filename, JSON.stringify(reportData, null, 4));
-    console.log(`Test completely finished! Report saved as: ${filename}`);
+    console.log(`JSON report saved as: ${filename}`);
 }
 
 runTests().catch(console.error);
