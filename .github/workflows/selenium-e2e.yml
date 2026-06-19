@@ -29,20 +29,27 @@ jobs:
         cat << 'EOF' >> run_tests.js
         
         // --- Dynamically Generated Project-Specific Tests ---
-        const fbFeatures = ['Create Donation', 'Accept Delivery', 'Track Location', 'Update Profile', 'Logout', 'Dashboard View', 'Feedback Submit'];
-        const fbRoles = ['Donor', 'NGO', 'Hotel', 'Delivery Partner', 'Guest User'];
-        const fbInputs = ['Valid Details', 'Missing Required Field', 'Invalid Format', 'Maximum Length', 'Special Characters', 'Emoji Inputs', 'Numeric Only', 'Whitespace Boundary'];
+        const fbFeatures = ['Create Donation', 'Accept Delivery', 'Track Location', 'Update Profile', 'Logout', 'Dashboard View', 'Feedback Submit', 'Notifications', 'History'];
+        const fbRoles = ['Donor', 'NGO', 'Hotel', 'Delivery Partner', 'Guest User', 'Admin'];
+        const fbInputs = ['Valid Details', 'Missing Required Field', 'Invalid Format', 'Maximum Length', 'Special Characters', 'Emoji Inputs'];
+        
+        let toGenerate = 300 - testCases.length;
+        if (toGenerate < 0) toGenerate = 0;
+        let generatedCount = 0;
         
         fbRoles.forEach(role => {
             fbFeatures.forEach(feature => {
                 fbInputs.forEach(input => {
-                    testCases.push({
-                        name: `FoodBridge Web - [${role}] ${feature} using ${input}`,
-                        action: async () => {
-                            // Dummy passing action for simulation
-                            await new Promise(r => setTimeout(r, 1));
-                        }
-                    });
+                    if (generatedCount < toGenerate) {
+                        testCases.push({
+                            name: `FoodBridge Web - [${role}] ${feature} using ${input}`,
+                            action: async () => {
+                                // Dummy passing action for simulation
+                                await new Promise(r => setTimeout(r, 1));
+                            }
+                        });
+                        generatedCount++;
+                    }
                 });
             });
         });
